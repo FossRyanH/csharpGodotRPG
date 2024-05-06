@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi600mjivptr0"]
+[gd_scene load_steps=10 format=3 uid="uid://bi600mjivptr0"]
 
+[ext_resource type="Script" path="res://Scripts/CharacterRelated/Player/Player.cs" id="1_bvy3v"]
 [ext_resource type="Texture2D" uid="uid://dqlv6ynjesqfi" path="res://GameArt/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="1_h6dpb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n40kx"]
@@ -88,6 +89,7 @@ _data = {
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+script = ExtResource("1_bvy3v")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_h6dpb")
