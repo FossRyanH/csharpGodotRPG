@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dp0ojbbwu3yrp"]
+
+[ext_resource type="PackedScene" uid="uid://bi600mjivptr0" path="res://Scenes/Characters/Player/player.tscn" id="1_uajid"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yua0x"]
+sky_top_color = Color(0.501961, 0.666667, 0.886275, 1)
+sky_curve = 0.369343
+
+[sub_resource type="Sky" id="Sky_yd0hh"]
+sky_material = SubResource("ProceduralSkyMaterial_yua0x")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_pywij"]
+background_mode = 2
+sky = SubResource("Sky_yd0hh")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_intensity = 1.1
+glow_blend_mode = 4
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0063
+volumetric_fog_detail_spread = 3.0
+volumetric_fog_ambient_inject = 0.1
+volumetric_fog_sky_affect = 0.125
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_28eq5"]
+auto_exposure_enabled = true
+dof_blur_far_distance = 4096.0
+dof_blur_near_distance = 1.0
+
+[node name="SandboxLevel" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_uajid")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 2.5)
+environment = SubResource("Environment_pywij")
+attributes = SubResource("CameraAttributesPractical_28eq5")
+current = true

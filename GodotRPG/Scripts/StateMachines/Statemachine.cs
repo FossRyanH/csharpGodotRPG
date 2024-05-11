@@ -18,4 +18,21 @@ public class Statemachine
         state?.EnterState();
         stateChanged?.Invoke(state);
     }
+
+    public void Update(double delta)
+    {
+        if (CurrentState != null)
+        {
+            CurrentState.Update();
+        }
+    }
+
+    public void ChangeState(IState nextState)
+    {
+        CurrentState?.ExitState();
+        CurrentState = nextState;
+        nextState.EnterState();
+
+        stateChanged?.Invoke(nextState);
+    }
 }
